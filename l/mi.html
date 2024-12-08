@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p> enter no and click ok:</p>
+    <input id="id1" type="number" min="100" max="300" required>
+    <button onclick="myfunction()">ok</button>
+    <p>if the no is less than 100 or greater than 300, an error message will be displayed</p>
+    <p id="result"></p>
+    <script>
+        function myfunction() {
+            var inpObj = document.getElementById("id1");
+            if (!inpObj.checkValidity()) {
+                document.getElementById("result").innerHTML = inpObj.validationMessage;
+            } else {
+                document.getElementById("result").innerHTML = "input ok";
+            }
+        }
+    </script>
+</body>
+</html>
